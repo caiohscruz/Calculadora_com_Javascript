@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <title>Calculadora</title>
+    <!--Para habilitar caracteres da lingua portuguesa-->
+    <meta charset="UTF-8">
+    
+    <!--Compatibilidade com o Edge-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--JS-->
+    <script src="/public/scrypts/operations.js" defer type="module"></script>
+    <script src="/public/scrypts/numbers.js" defer type="module"></script>
+    <script src="/public/scrypts/equal.js" defer type="module"></script>
+    
+    <!-- View Port-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="/public/styles/global.css">
+    
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4" class="visor"> 
+                <input type="text" id="visor1" placeholder=""><br>
+                <input type="text" id="visor2" placeholder="0" value="0">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="%">%</button>
+            </td>
+            <td>
+                <button id="pow" class="simple_operation">x²</button>
+            </td>
+            <td>
+                <button id="root">raiz</button>
+            </td>
+            <td>
+                <button id="div" class="simple_operation">/</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="7" class="num">7</button>
+            </td>
+            <td>
+                <button id="8" class="num">8</button>
+            </td>
+            <td>
+                <button id="9" class="num">9</button>
+            </td>
+            <td>
+                <button id="times" class="simple_operation">X</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="4" class="num">4</button>
+            </td>
+            <td>
+                <button id="5" class="num">5</button>
+            </td>
+            <td>
+                <button id="6" class="num">6</button>
+            </td>
+            <td>
+                <button id="minus" class="simple_operation">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="1" class="num">1</button>
+            </td>
+            <td>
+                <button id="2" class="num">2</button>
+            </td>
+            <td>
+                <button id="3" class="num">3</button>
+            </td>
+            <td>
+                <button id="plus" class="simple_operation">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="invert">+/-</button>
+            </td>
+            <td>
+                <button id="0" class="num">0</button>
+            </td>
+            <td>
+                <button id="dot">.</button>
+            </td>
+            <td>
+                <button id="equal">=</button>
+            </td>
+        </tr>
+    </table>  
+    <input type="text" id="a">
+    <input type="text" id="b">
+    <input type="text" id="oper">
+    <input type="text" id="result">
+    <input type="text" id="control" value="false">
+</body>
+</html>

@@ -1,0 +1,16 @@
+html{
+    display: flex;
+    font-size: 62.5%
+}
+button{
+    height: 5rem;
+    width: 5rem;
+}
+input{
+    border:none;
+    text-align: right;
+    width: 95%;
+}
+.visor {
+    border: 2px solid;
+}
