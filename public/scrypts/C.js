@@ -12,6 +12,7 @@ function CClick(){
     const b = document.getElementById("b")
     const result = document.getElementById("result")
     const operador = document.getElementById("oper")
+    const div0 = document.getElementById("div0")
 
     visorInferiorIsResult.value="false"
     visorSuperior.value=""
@@ -20,4 +21,6 @@ function CClick(){
     b.value=""
     result.value=""
     operador.value=""
+    div0.value="false"
+
 }

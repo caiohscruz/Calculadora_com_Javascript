@@ -31,8 +31,8 @@ function numClick(id){
     // o valor do visor deve ser concatenado com o valor do botão
     if (visorInferior.value=="0"||visorInferiorIsResult.value=="true"){
         visorInferior.value=id
-        visorInferiorIsResult.value="false"
     } else {
         visorInferior.value+=id
     }
+    visorInferiorIsResult.value="false"
 }
