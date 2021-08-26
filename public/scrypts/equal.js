@@ -4,25 +4,50 @@ const equalButton = document.getElementById("equal")
 equalButton.addEventListener("click", function() {equalClick()})
 
 function equalClick(){
-    if (document.getElementById("control").value=="false"){
-        document.getElementById("visor1").value=document.getElementById("a").value+document.getElementById("oper").value+document.getElementById("visor2").value+"="
-        document.getElementById("b").value=document.getElementById("visor2").value
-        document.getElementById("result").value=eval(
-            document.getElementById("a").value+
-            document.getElementById("oper").value+
-            document.getElementById("b").value
+    
+    const visorInferiorIsResult = document.getElementById("visor2IsResult")
+    const visorSuperior = document.getElementById("visor1")
+    const visorInferior = document.getElementById("visor2")
+    const a = document.getElementById("a")
+    const b = document.getElementById("b")
+    const result = document.getElementById("result")
+    const operador = document.getElementById("oper")
+    
+        // se o botão "x²" foi clicado antes, mas o botão "=" não foi clicado na sequência,
+    // ao clicar em qualquer operador, a expressão deve ser calculada, o sqrAux deve ser
+    // resetado e o visorSuperior deve ser alterado de forma a apresentar o resultado 
+    // mais o simbolo do operado
+    const auxSqr = document.getElementById("auxSqr")
+    
+    if (auxSqr.value!=""){
+        visorSuperior.value = visorSuperior.value.replace(auxSqr.value,"")
+        result.value=eval(visorSuperior.value.replace(auxSqr.value,"")+b.value)
+        visorSuperior.value+=auxSqr.value+"="
+        visorInferior.value=result.value
+        auxSqr.value=""
+    }else{
+    // a diferença aqui é que se apertar "=" quando o que temos no visorInferior
+    // é um resultado, a calculadora simplemente deve repetir a operação anterior
+    if (visorInferiorIsResult.value=="false"){
+        visorSuperior.value=a.value+operador.value+visorInferior.value+"="
+        b.value=visorInferior.value
+        result.value=eval(
+            a.value+
+            operador.value+
+            b.value
             )
-        document.getElementById("visor2").value=document.getElementById("result").value
-        document.getElementById("a").value=document.getElementById("result").value
-        document.getElementById("control").value="true"
-    } else {
-        document.getElementById("visor1").value=document.getElementById("a").value+document.getElementById("oper").value+document.getElementById("b").value+"="
-        document.getElementById("result").value=eval(
-            document.getElementById("a").value+
-            document.getElementById("oper").value+
-            document.getElementById("b").value
-            )
-        document.getElementById("visor2").value=document.getElementById("result").value
-        document.getElementById("a").value=document.getElementById("result").value
-    }
-}
+            visorInferior.value=result.value
+            a.value=result.value
+        } else {
+            visorSuperior.value=visorInferior.value+operador.value+b.value+"="
+            result.value=eval(
+                visorInferior.value+
+                operador.value+
+                b.value
+                )
+                visorInferior.value=result.value
+                a.value=result.value
+            }
+        }    
+        visorInferiorIsResult.value="true"
+    }    
