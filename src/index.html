@@ -11,6 +11,14 @@
     <script src="/public/scrypts/operations.js" defer type="module"></script>
     <script src="/public/scrypts/numbers.js" defer type="module"></script>
     <script src="/public/scrypts/equal.js" defer type="module"></script>
+    <script src="/public/scrypts/backspace.js" defer type="module"></script>
+    <script src="/public/scrypts/CE.js" defer type="module"></script>
+    <script src="/public/scrypts/C.js" defer type="module"></script>
+    <script src="/public/scrypts/simetric.js" defer type="module"></script>
+    <script src="/public/scrypts/sqr.js" defer type="module"></script>
+
+
+
     
     <!-- View Port-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +40,21 @@
                 <button id="%">%</button>
             </td>
             <td>
-                <button id="pow" class="simple_operation">x²</button>
+                <button id="CE">CE</button>
+            </td>
+            <td>
+                <button id="C">C</button>
+            </td>
+            <td>
+                <button id="backspace">←</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="1/x">1/x</button>
+            </td>
+            <td>
+                <button id="sqr">x²</button>
             </td>
             <td>
                 <button id="root">raiz</button>
@@ -85,7 +107,7 @@
         </tr>
         <tr>
             <td>
-                <button id="invert">+/-</button>
+                <button id="simetric">+/-</button>
             </td>
             <td>
                 <button id="0" class="num">0</button>
@@ -97,11 +119,23 @@
                 <button id="equal">=</button>
             </td>
         </tr>
-    </table>  
+    </table> 
+    <label for="a">a =</label> 
     <input type="text" id="a">
+    <br>
+    <label for="b">b =</label>
     <input type="text" id="b">
+    <br>
+    <label for="oper">Último operador =</label>
     <input type="text" id="oper">
+    <br>
+    <label for="result">Resultado =</label>
     <input type="text" id="result">
-    <input type="text" id="control" value="false">
+    <br>
+    <label for="visor2IsResult">visor2IsResult=</label>
+    <input type="text" id="visor2IsResult" value="false">
+    <br>
+    <label for="auxSqr">auxSqr=</label>
+    <input type="text" id="auxSqr">
 </body>
 </html>
