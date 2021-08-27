@@ -90,8 +90,13 @@ function sOperClick(oper){
                 visorSuperior.value+=operador.value
                 auxCalc.value=visorInferior.value
             }else{
-                visorSuperior.value=auxCalc.value+operador.value
-                visorInferior.value=auxCalc.value
+                if(IsResult.value=="true"){
+                    visorSuperior.value=auxCalc.value+operador.value
+                    visorInferior.value=auxCalc.value
+                }else{
+                    visorSuperior.value=visorInferior.value+operador.value
+                    auxCalc.value=visorInferior.value
+                }
             }
         }
         
@@ -102,50 +107,4 @@ function sOperClick(oper){
     /* Sempre que um botão de operador for clicado, o conteudo do visorInferior passará a corresponder 
     com algum resultado, então devemos setar isResult como "true" */
     IsResult.value="true"
-    /*
-    // se o botão "x²" foi clicado antes, mas o botão "=" não foi clicado na sequência,
-    // ao clicar em qualquer operador, a expressão deve ser calculada, o sqrAux deve ser
-    // resetado e o visorSuperior deve ser alterado de forma a apresentar o resultado 
-    // mais o simbolo do operado
-    const auxSqr = document.getElementById("auxSqr")
-    
-    if (auxSqr.value!=""){
-        visorSuperior.value = visorSuperior.value.replace(auxSqr.value,"")
-        result.value=eval(visorSuperior.value+b.value)
-        visorSuperior.value=result.value+operador.value
-        visorInferior.value=result.value
-        auxSqr.value=""
-    }
-    else{    
-        if(visorInferiorIsResult.value=="false"){
-            //se o valor do visorInferior não é um resultado e o visor superior
-            // está vazio, deve ser guardado em "a" o valor do visor inferior e
-            // o conteudo do visorSuperior deve ser atualizado para "a" + operador
-            if (visorSuperior.value==""){
-                a.value=visorInferior.value
-                visorSuperior.value=a.value+operador.value
-                visorInferiorIsResult.value="true"        
-            }else{
-                // se o valor do visorInferior não for um resultado e o visorSuperior
-                // não estiver vazio, o valor do visorInferior deve ser guardado em "b",
-                // o resultado da operação deve ser guardado em "result", o visorSuperior
-                // deve passar a apresentar o "result" + "operador", tanto o visorInferior
-                // quanto o "a" devem passar a ter o valor do "result", e demos sinalizar que
-                // o visorInferior passou a ser um "resultado"
-                b.value=visorInferior.value
-                result.value=eval(visorSuperior.value+b.value)
-                visorSuperior.value=result.value+operador.value
-                visorInferior.value=result.value
-                a.value=result.value
-                visorInferiorIsResult.value="true"          
-            }   
-        }else{
-            result.value=eval(visorSuperior.value+visorInferior.value)
-            visorSuperior.value=result.value+operador.value
-            visorInferior.value=result.value
-            a.value=result.value
-            visorInferiorIsResult.value="true"        
-        }
-    }
-    */
 }

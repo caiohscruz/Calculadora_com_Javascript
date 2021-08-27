@@ -13,6 +13,7 @@ function CClick(){
     const result = document.getElementById("result")
     const operador = document.getElementById("oper")
     const div0 = document.getElementById("div0")
+    const multEquals = document.getElementById("multEquals")
 
     IsResult.value="false"
     visorSuperior.value=""
@@ -22,5 +23,6 @@ function CClick(){
     result.value=""
     operador.value=""
     div0.value="false"
+    multEquals.value=""
 
 }

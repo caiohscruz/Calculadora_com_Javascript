@@ -45,11 +45,11 @@ function sqrClick(){
             auxSqr tem que ser ser setado com "sqr(auxSqr)", e essa informação deve ser setada
             no visorSuperior */
             if (auxSqr.value!=""){
-                visorSuperior.value.replace(auxSqr,"")
-                auxSqr.value="sqr("+auxSqr.value+")"
                 /* Se retirar o auxSqr do visorSuperior fez ele ficar vazio, então não temos que nos
                 preocupar com calculos anteriores */
-                if(visorSuperior.value=""){
+                visorSuperior.value=visorSuperior.value.replace(auxSqr.value,"")
+                auxSqr.value="sqr("+auxSqr.value+")"
+                if(visorSuperior.value==""){
                     auxCalc.value=eval(auxCalc.value+"*"+auxCalc.value)
                     visorSuperior.value=auxSqr.value
                     visorInferior.value=auxCalc.value
@@ -64,14 +64,14 @@ function sqrClick(){
                         auxCalc.value=eval(auxCalc.value+"/"+visorInferior.value)
                     }else{
                         auxCalc.value=eval(auxCalc.value+"*"+visorInferior.value)
-                        visorInferior.value=eval(visorInferior.value+"*"+visorInferior.value)
-                        visorSuperior.value+=auxSqr.value
-                        auxCalc.value=eval(auxCalc.value+""+visorSuperior.value.charAt(visorSuperior.value.length-1)+""+visorInferior.value)
                     }
-
+                    visorInferior.value=eval(visorInferior.value+"*"+visorInferior.value)
+                    auxCalc.value=eval(auxCalc.value+visorSuperior.value.charAt(visorSuperior.value.length-1)+visorInferior.value)
+                    visorSuperior.value+=auxSqr.value
                 }
-            }        
-        }
+                
+            }
+        }        
     }
     /* Sempre que apertamos x², no visorInferior fica o resultado de x², por isso devemos
     setar isResult como "true" independente da situação */
