@@ -3,10 +3,44 @@
 /* O trecho abaixo é responsável por identificar todos os botões de números,
 para os quais atribui a classe "num", e adicionar a eles uma escula para clique
 que chamará a função correspondente */  
+
+/* 
+
 const numButtons = document.querySelectorAll(".num") 
 numButtons.forEach(button => {
     button.addEventListener("click", function() {numClick(button.getAttribute("id"))})
 })
+
+*/
+
+/* Numa discussão no linkedin, comentaram que usar um forEach para isso não seria 
+interessante, seria um incremento de complexidade sem benefícios, que seria melhor, 
+por uma questão de desempenho, acessar elemento por elemento diretamente, em vez de 
+por meio de um laço de repetição. Por isso o código acima foi comentado, e adiciono
+o que segue. Resolvi acatar a sugestão deles por não ter ainda muita experiência,
+espero ter propriedade para decidir essas coisa em não muito tempo */
+
+const button_zero = document.getElementById("0")
+const button_one = document.getElementById("1")
+const button_two = document.getElementById("2")
+const button_three = document.getElementById("3")
+const button_four = document.getElementById("4")
+const button_five = document.getElementById("5")
+const button_six = document.getElementById("6")
+const button_seven = document.getElementById("7")
+const button_eight = document.getElementById("8")
+const button_nine = document.getElementById("9")
+
+button_zero.addEventListener("click", function() {numClick("0"))
+button_one.addEventListener("click", function() {numClick("1"))
+button_two.addEventListener("click", function() {numClick("2"))
+button_three.addEventListener("click", function() {numClick("3"))
+button_four.addEventListener("click", function() {numClick("4"))
+button_five.addEventListener("click", function() {numClick("5"))
+button_six.addEventListener("click", function() {numClick("6"))
+button_seven.addEventListener("click", function() {numClick("7"))
+button_eight.addEventListener("click", function() {numClick("8"))
+button_nine.addEventListener("click", function() {numClick("9")})
 
 /* Importante perceber que, ao clicar num número, dois comportamentos são possíveis:
 

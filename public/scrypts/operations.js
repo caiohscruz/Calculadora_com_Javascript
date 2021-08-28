@@ -3,10 +3,31 @@
 /* O trecho abaixo é responsável por identificar todos os botões dessas operações,
 para os quais atribui a classe "simple_operation", e adicionar a eles uma escula 
 para o evento de clique que chamará a função correspondente */ 
+
+/*
 const sOperButtons = document.querySelectorAll(".simple_operation") 
 sOperButtons.forEach(button => {
     button.addEventListener("click", function() {sOperClick(button.getAttribute("id"))})
 })
+*/
+
+/* Numa discussão no linkedin, comentaram que usar um forEach para isso não seria 
+interessante, seria um incremento de complexidade sem benefícios, que seria melhor, 
+por uma questão de desempenho, acessar elemento por elemento diretamente, em vez de 
+por meio de um laço de repetição. Por isso o código acima foi comentado, e adiciono
+o que segue. Resolvi acatar a sugestão deles por não ter ainda muita experiência,
+espero ter propriedade para decidir essas coisa em não muito tempo */
+perf(numbers/operatons): Decreases algorithm complexity by not using repeating structure to add click event and map elements.
+const button_plus = document.getElementById("plus")
+const button_minus = document.getElementById("minus")
+const button_times = document.getElementById("times")
+const button_div = document.getElementById("div")
+
+button_plus.addEventListener("click", function() {sOperClick("plus")})
+button_minus.addEventListener("click", function() {sOperClick("minus")})
+button_times.addEventListener("click", function() {sOperClick("times")})
+button_div.addEventListener("click", function() {sOperClick("div")})
+
 function sOperClick(oper){
     /* A constante abaixo se refere a um input que não ficará visível ao usuário
     que servirá para armazenar uma referência de qual foi o último botão de 
