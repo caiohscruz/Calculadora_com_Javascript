@@ -51,6 +51,7 @@ function sOperClick(oper){
     terei eventualmente que lidar com os simbolos de multiplicação e divisão com "replace" */
     const operacoes = ["+","-","x","÷"]
     
+    
     /* Se o visorSuperior está vazio é porque nenhum cálculo foi iniciado ainda então o 
     visorSuperior deve recever o valor do visorInferior mais o simbolo do operador e 
     isResult deve ser setado como "true", para que se um número for clicado na sequencia, 
@@ -78,9 +79,17 @@ function sOperClick(oper){
                 visorSuperior.value=visorSuperior.value.replace("x","*")
                 auxCalc.value=eval(visorSuperior.value)
                 /* Setando os visores */
-                visorSuperior.value=auxCalc.value+operador.value
-                visorInferior.value=auxCalc.value
-                
+                if(auxCalc.value!="Infinity"){
+                    visorSuperior.value=auxCalc.value+operador.value
+                    visorInferior.value=auxCalc.value
+                }else{
+                    visorSuperior.value=visorSuperior.value.replace("/","÷")
+                    visorSuperior.value=visorSuperior.value.replace("*","x")
+                    visorSuperior.value=visorSuperior.value+operador.value
+                    div0.value="true"
+                    visorInferior.value="Não é possível dividir por zero"
+                    document.getElementById('disableOrEnableButton').click();
+                }                    
             }
         }else{
             /* Se o visorSuperio não está vazio e não termina um símbolo de operação matemática,
@@ -100,6 +109,12 @@ function sOperClick(oper){
             }
         }
         
+    }
+    
+    
+    if(visorInferior.value=="Infinity"){
+        div0.value="true"
+        visorInferior.value="Não é possível dividir por zero"
     }
     /* Sempre que um botão de operador for clicado devemos setar auxSqr como vazio, pois essa string
     não será manipulada mais */

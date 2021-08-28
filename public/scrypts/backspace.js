@@ -10,4 +10,8 @@ function backClick(){
     const visorInferior = document.getElementById("visor2")
 
     visorInferior.value = visorInferior.value.substring(0, visorInferior.value.length -1)
+
+    if(div0.value=="true"){
+        document.getElementById('C').click();
+    }
 }

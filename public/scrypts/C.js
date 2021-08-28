@@ -1,28 +1,24 @@
-// tratamento do botao C
+/* Aqui temos o tratamento do botão C */
 const CButton = document.getElementById("C") 
 
 CButton.addEventListener("click", function() {CClick()})
 
 function CClick(){
-    // o botão C simplesmente apaga todo o conteúdo do visor e reseta as variáveis
-    const IsResult = document.getElementById("IsResult")
     const visorSuperior = document.getElementById("visor1")
     const visorInferior = document.getElementById("visor2")
-    const auxCalc = document.getElementById("auxCalc")
-    const auxSqr = document.getElementById("auxSqr")
-    const result = document.getElementById("result")
-    const operador = document.getElementById("oper")
-    const div0 = document.getElementById("div0")
-    const multEquals = document.getElementById("multEquals")
-
-    IsResult.value="false"
+    
+    /* O botão C simplesmente reseta a calculadora */
+    if(div0.value=="true"){
+        document.getElementById('disableOrEnableButton').click();
+    }
+    
     visorSuperior.value=""
-    visorInferior.value = "0"
-    auxCalc.value = ""
-    auxSqr.value = ""
-    result.value=""
-    operador.value=""
-    div0.value="false"
-    multEquals.value=""
+    visorInferior.value=""
+        
+    const stringInputs = document.querySelectorAll(".auxString") 
+    stringInputs.forEach(stringInput => stringInput.value="")
+    const boolInputs = document.querySelectorAll(".auxBooleano") 
+    boolInputs.forEach(boolInput => boolInput.value="false")
 
+    
 }

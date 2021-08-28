@@ -12,14 +12,13 @@
     <script src="/public/scrypts/numbers.js" defer type="module"></script>
     <script src="/public/scrypts/equal.js" defer type="module"></script>
     <script src="/public/scrypts/backspace.js" defer type="module"></script>
-    <script src="/public/scrypts/CE.js" defer type="module"></script>
     <script src="/public/scrypts/C.js" defer type="module"></script>
+    <script src="/public/scrypts/CE.js" defer type="module"></script>
     <script src="/public/scrypts/simetric.js" defer type="module"></script>
     <script src="/public/scrypts/sqr.js" defer type="module"></script>
+    <script src="/public/scrypts/disableOrEnableButton.js" defer type="module"></script>
 
-
-
-    
+   
     <!-- View Port-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -37,7 +36,7 @@
         </tr>
         <tr>
             <td>
-                <button id="%">%</button>
+                <button id="%" class="different_operation">%</button>
             </td>
             <td>
                 <button id="CE">CE</button>
@@ -51,13 +50,13 @@
         </tr>
         <tr>
             <td>
-                <button id="1/x">1/x</button>
+                <button id="1/x" class="different_operation">1/x</button>
             </td>
             <td>
-                <button id="sqr">x²</button>
+                <button id="sqr" class="different_operation">x²</button>
             </td>
             <td>
-                <button id="root">raiz</button>
+                <button id="root" class="different_operation">raiz</button>
             </td>
             <td>
                 <button id="div" class="simple_operation">/</button>
@@ -107,13 +106,13 @@
         </tr>
         <tr>
             <td>
-                <button id="simetric">+/-</button>
+                <button id="simetric" class="different_operation">+/-</button>
             </td>
             <td>
                 <button id="0" class="num">0</button>
             </td>
             <td>
-                <button id="dot">.</button>
+                <button id="dot" class="different_operation">.</button>
             </td>
             <td>
                 <button id="equal">=</button>
@@ -121,24 +120,22 @@
         </tr>
     </table> 
     <label for="auxCalc">auxCalc =</label> 
-    <input type="text" id="auxCalc">
+    <input type="text" id="auxCalc" class="auxString">
     <br>
     <label for="oper">Último operador =</label>
-    <input type="text" id="oper">
-    <br>
-    <label for="result">Resultado =</label>
-    <input type="text" id="result">
+    <input type="text" id="oper" class="auxString">
     <br>
     <label for="IsResult">IsResult=</label>
-    <input type="text" id="IsResult" value="false">
+    <input type="text" id="IsResult" class="auxBooleano" value="false">
     <br>
     <label for="auxSqr">auxSqr=</label>
-    <input type="text" id="auxSqr">
+    <input type="text" id="auxSqr" class="auxString">
     <br>
     <label for="multEquals">multEquals=</label>
-    <input type="text" id="multEquals">
+    <input type="text" id="multEquals" class="auxString">
     <br>
     <label for="div0">div0=</label>
-    <input type="text" id="div0" value="false">
+    <input type="text" id="div0" class="auxBooleano" value="false">
+    <button id="disableOrEnableButton">Disable/Enable</button>
 </body>
 </html>

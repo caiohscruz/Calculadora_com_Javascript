@@ -34,10 +34,14 @@ function numClick(id){
     houve o tratamento do botão x² */
     const auxSqr = document.getElementById("auxSqr")
 
+    if(div0.value=="true"){
+        document.getElementById('C').click();
+    }
+
     /* Se a última informação do visorInferior, a mais à direita, for algo do tipo sqr(X)
     devemos alterar o valor da auxCalc para não considerar esse sqr() */
     if(auxSqr.value!=""){
-        if((visorSuperior.value.replace(auxSqr.value,"")=="")||(visorSuperior.value.replace(auxSqr.value,"")=="-")){
+        if(visorSuperior.value.replace(auxSqr.value,"")==""){
             visorInferior.value="0"
             auxCalc.value=visorInferior.value
         }else{

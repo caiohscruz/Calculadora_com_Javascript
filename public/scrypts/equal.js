@@ -22,7 +22,7 @@ function equalClick(){
             }else if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="÷"){
                 auxCalc.value=eval(visorSuperior.value.replace("÷","/")+visorInferior.value)
             }else{
-                auxCalc.value=eval(visorSuperior.value+visorInferior.value)
+                auxCalc.value=eval(auxCalc.value+operador.value+visorInferior.value)
             } 
             visorSuperior.value+=visorInferior.value+"="
             multEquals.value=visorInferior.value
@@ -39,6 +39,11 @@ function equalClick(){
         visorSuperior.value=auxCalc.value+operador.value+multEquals.value+"="
         auxCalc.value=eval(auxCalc.value+operador.value+multEquals.value)
         visorInferior.value=auxCalc.value
+    }
+    if(visorInferior.value=="Infinity"){
+        div0.value="true"
+        visorInferior.value="Não é possível dividir por zero"
+        document.getElementById('disableOrEnableButton').click();
     }
 }
 
