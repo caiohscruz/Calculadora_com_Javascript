@@ -28,14 +28,14 @@ function CClick(){
     o que segue. Resolvi acatar a sugestão deles por não ter ainda muita experiência,
     espero ter propriedade para decidir essas coisa em não muito tempo */
     const auxCalc = document.getElementById("auxCalc")
-    const auxSqr = document.getElementById("auxSqr")
+    const auxBuilderStr = document.getElementById("auxBuilderStr")
     const operador = document.getElementById("oper")
     const multEquals = document.getElementById("multEquals")
     
     const isResult = document.getElementById("isResult")
 
     auxCalc.value=""
-    auxSqr.value=""
+    auxBuilderStr.value=""
     operador.value=""
     multEquals.value=""
 

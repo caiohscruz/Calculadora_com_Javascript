@@ -62,9 +62,9 @@ function sOperClick(oper){
     const isResult = document.getElementById("isResult")
     /* "auxCalc" será utilizado para auxiliar nas operações */
     const auxCalc = document.getElementById("auxCalc")
-    /* "auxSqr" guarda uma string do tipo "sqr(x)" e aqui vai indicar que anteriormente
+    /* "auxBuilderStr" guarda uma string do tipo "sqr(x)" e aqui vai indicar que anteriormente
     houve o tratamento do botão x² */
-    const auxSqr = document.getElementById("auxSqr")
+    const auxBuilderStr = document.getElementById("auxBuilderStr")
     /* div0 indica se houve uma divisão por zero anteriormente  */
     const div0 = document.getElementById("div0")
     /* "operacoes" guarda os simbolos dos operadores básicos. Como farei o uso da funçao "eval"
@@ -115,7 +115,7 @@ function sOperClick(oper){
             /* Se o visorSuperio não está vazio e não termina um símbolo de operação matemática,
             devemos estar com o quadrado ou raiz de um número no visor. Devemos então concatenar
             a informação do visor com o simbolo do operador e setar o valor da auxCalc */
-            if((visorSuperior.value.replace(auxSqr.value,"")=="")||(visorSuperior.value.replace(auxSqr.value,"")=="-")){
+            if((visorSuperior.value.replace(auxBuilderStr.value,"")=="")||(visorSuperior.value.replace(auxBuilderStr.value,"")=="-")){
                 visorSuperior.value+=operador.value
                 auxCalc.value=visorInferior.value
             }else{
@@ -137,9 +137,9 @@ function sOperClick(oper){
         visorInferior.value="Não é possível dividir por zero"
         document.getElementById('disableButton').click("disable");
     }
-    /* Sempre que um botão de operador for clicado devemos setar auxSqr como vazio, pois essa string
+    /* Sempre que um botão de operador for clicado devemos setar auxBuilderStr como vazio, pois essa string
     não será manipulada mais */
-    auxSqr.value=""
+    auxBuilderStr.value=""
     /* Sempre que um botão de operador for clicado, o conteudo do visorInferior passará a corresponder 
     com algum resultado, então devemos setar isResult como "true" */
     isResult.value="true"

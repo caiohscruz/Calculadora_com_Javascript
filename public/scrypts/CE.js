@@ -7,7 +7,7 @@ function CEClick(){
     
     const visorSuperior = document.getElementById("visor1")
     const visorInferior = document.getElementById("visor2")
-    const auxSqr = document.getElementById("auxSqr")
+    const auxBuilderStr = document.getElementById("auxBuilderStr")
     const div0 = document.getElementById("div0")
     const isResult = document.getElementById("isResult")
     const auxCalc = document.getElementById("auxCalc")
@@ -20,8 +20,8 @@ function CEClick(){
             se comporta como o CE, resetando a calculadora */
             document.getElementById('C').click();
             
-        }else if(auxSqr!=""){
-            visorSuperior.value=visorSuperior.value.replace(auxSqr.value, "")
+        }else if(auxBuilderStr!=""){
+            visorSuperior.value=visorSuperior.value.replace(auxBuilderStr.value, "")
             
             if(operacoes.includes(visorSuperior.value.charAt(visorSuperior.value.length-1))){
                 if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="+"){
@@ -33,7 +33,7 @@ function CEClick(){
                 }else{
                     auxCalc.value=eval(auxCalc.value+"*"+visorInferior.value)
                 }   
-                auxSqr.value=""         
+                auxBuilderStr.value=""         
             }
         }    
         /* O comportamento usual do CE é limpar a parte inferior do visor */

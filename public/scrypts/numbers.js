@@ -64,24 +64,24 @@ function numClick(id){
     const operador = document.getElementById("oper")
     /* "auxCalc" será utilizado para auxiliar nas operações */
     const auxCalc = document.getElementById("auxCalc")
-    /* "auxSqr" guarda uma string do tipo "sqr(x)" e aqui vai indicar que anteriormente
+    /* "auxBuilderStr" guarda uma string do tipo "sqr(x)" e aqui vai indicar que anteriormente
     houve o tratamento do botão x² */
-    const auxSqr = document.getElementById("auxSqr")
+    const auxBuilderStr = document.getElementById("auxBuilderStr")
 
     if((div0.value=="true")||(visorSuperior.value.charAt(visorSuperior.value.length-1)=="=")){
         document.getElementById('C').click();
     }
     /* Se a última informação do visorInferior, a mais à direita, for algo do tipo sqr(X)
     devemos alterar o valor da auxCalc para não considerar esse sqr() */
-    if(auxSqr.value!=""){
-        if(visorSuperior.value.replace(auxSqr.value,"")==""){
+    if(auxBuilderStr.value!=""){
+        if(visorSuperior.value.replace(auxBuilderStr.value,"")==""){
             visorInferior.value="0"
             auxCalc.value=visorInferior.value
         }else{
             visorSuperior.value=auxCalc.value+operador.value
             visorInferior.value=auxCalc.value
         }
-        auxSqr.value=""
+        auxBuilderStr.value=""
     }
     if (visorInferior.value!="0"&&isResult.value!="true"){
         /* CASO 1 */
