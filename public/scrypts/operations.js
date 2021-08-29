@@ -108,7 +108,8 @@ function sOperClick(oper){
                     visorSuperior.value=visorSuperior.value+operador.value
                     div0.value="true"
                     visorInferior.value="Não é possível dividir por zero"
-                    document.getElementById('disableOrEnableButton').click();
+                    visorInferior.classList.add("smalltext")
+                    document.getElementById('disableButton').click();
                 }                    
             }
         }else{
@@ -131,12 +132,6 @@ function sOperClick(oper){
         
     }
     
-    
-    if(visorInferior.value=="Infinity"){
-        div0.value="true"
-        visorInferior.value="Não é possível dividir por zero"
-        document.getElementById('disableButton').click("disable");
-    }
     /* Sempre que um botão de operador for clicado devemos setar auxBuilderStr como vazio, pois essa string
     não será manipulada mais */
     auxBuilderStr.value=""

@@ -17,22 +17,28 @@ input{
     text-align: right;
     width: 95%;
     background-color: #565656;
+    pointer-events: none;
 }
 input, button{
     font-family: Segoe UI ;
 }
 #visor1{
-    color: #BBBBBB
+    color: #BBBBBB;
 }
 #visor2{
     font-weight: 600;
     color: #FFFFFF;
     border-bottom: 0;
+}
+.normaltext{
     font-size: 4.5rem;
 }
-button:hover{
-    background-color: #4B4B4B;
-    border: 1px solid #BBBBBB
+.smalltext{
+    font-size: 2rem;
+}
+button:hover, #simetric:hover, #dot:hover{
+    background-color: #6B6B6B;
+    border: 1px solid #BBBBBB;
 }
 table{
     background-color: #565656;

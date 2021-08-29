@@ -11,6 +11,7 @@ function CClick(){
     /* O botão C simplesmente reseta a calculadora */
     if(div0.value=="true"){
         document.getElementById('enableButton').click();
+        visorInferior.classList.remove("smalltext")
     }
     
     visorSuperior.value=""
