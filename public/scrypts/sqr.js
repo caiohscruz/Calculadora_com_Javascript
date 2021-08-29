@@ -47,7 +47,7 @@ function sqrClick(){
             if (auxBuilderStr.value!=""){
                 /* Se retirar o auxBuilderStr do visorSuperior fez ele ficar vazio, então não temos que nos
                 preocupar com calculos anteriores */
-                visorSuperior.value=visorSuperior.value.replace(auxBuilderStr.value,"")
+                visorSuperior.value=visorSuperior.value.slice(0, - auxBuilderStr.value.length)
                 auxBuilderStr.value="sqr("+auxBuilderStr.value+")"
                 if(visorSuperior.value==""){
                     auxCalc.value=eval(auxCalc.value+"*"+auxCalc.value)
