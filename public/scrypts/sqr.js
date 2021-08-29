@@ -38,7 +38,7 @@ function sqrClick(){
         if(operacoes.includes(visorSuperior.value.charAt(visorSuperior.value.length-1))){
             auxSqr.value="sqr("+visorInferior.value+")"
             visorInferior.value=eval(visorInferior.value+"*"+visorInferior.value)
-            auxCalc.value=eval(auxCalc.value+visorSuperior.value.charAt(visorSuperior.value.length-1)+visorInferior.value)
+            auxCalc.value=eval(auxCalc.value+visorSuperior.value.charAt(visorSuperior.value.length-1).replace("x","*").replace("÷","/")+visorInferior.value)
             visorSuperior.value+=auxSqr.value
         }else{
             /* Se auxSqr não está vazio, é porque a última operação foi tratar do x², então
