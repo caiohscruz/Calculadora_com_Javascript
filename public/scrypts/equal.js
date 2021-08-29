@@ -44,7 +44,6 @@ function equalClick(){
         if(visorInferior.value=="Infinity"){
             div0.value="true"
             visorInferior.value="Não é possível dividir por zero"
-            visorInferior.classList.add("smalltext")
             document.getElementById('disableButton').click();
         }
     }else{
