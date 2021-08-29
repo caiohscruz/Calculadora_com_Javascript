@@ -1,31 +1,61 @@
 html{
     display: flex;
     font-size: 62.5%;
+    color: #FFFFFF;
 }
 button{
-    height: 5rem;
-    width: 5rem;
+    height: max(5.3rem,5.3px);
+    width: max(7.7rem, 7.7px);
+    background-color: #333333;
+    color: #FFFFFF;
+    border: none;
 }
 input{
     border:none;
     text-align: right;
     width: 95%;
-}
-.visor {
-    border: 2px solid;
+    background-color: #565656;
 }
 input, button{
     font-family: Segoe UI ;
 }
 #visor1{
-
+    color: #BBBBBB
 }
 #visor2{
     font-weight: 600;
+    color: #FFFFFF;
+    border-bottom:;
+    font-size: 4.5rem;
 }
 button:hover{
-    color: 
+    background-color: #4B4B4B;
+    border: 1px solid #BBBBBB
 }
 table{
-    background-color: #1F1F1F;
+    background-color: #565656;
+    width: max(31.977rem,319.77px);
+    height: max(50.445rem,504.45px);
+    border-spacing: 2px;
+}
+tr, td{
+    border-spacing: 1px;
+    
+}
+.num, #simetric, #dot{
+    background-color: #111111;
+}
+.num{
+    font-weight: 600;
+}
+#equal{
+    background-color: #565656;
+}
+.visor{
+    height: max(10.7rem,107px);
+    width: max(32.1rem, 321px);
+}
+.title{
+    font-size: 1.3rem;
+    
 }
