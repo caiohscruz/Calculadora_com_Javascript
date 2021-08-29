@@ -78,8 +78,17 @@ function numClick(id){
             visorInferior.value="0"
             auxCalc.value=visorInferior.value
         }else{
-            visorSuperior.value=auxCalc.value+operador.value
-            visorInferior.value=auxCalc.value
+            visorSuperior.value=visorSuperior.value.replace(auxBuilderStr.value,"")
+            if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="+"){
+                auxCalc.value=eval(auxCalc.value+"-"+visorInferior.value)
+            }else if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="-"){
+                auxCalc.value=eval(auxCalc.value+"+"+visorInferior.value)
+            }else if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="x"){
+                auxCalc.value=eval(auxCalc.value+"/"+visorInferior.value)
+            }else{
+                auxCalc.value=eval(auxCalc.value+"*"+visorInferior.value)
+            }
+            visorInferior.value="0"
         }
         auxBuilderStr.value=""
     }

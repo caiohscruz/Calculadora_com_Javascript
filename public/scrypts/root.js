@@ -3,7 +3,7 @@
 /* O trecho abaixo é responsável por identificar o botão de raiz e atribuis a ele um evento
 de clique chamará a função correspondente */
 const rootButton = document.getElementById("root") 
-sqrButton.addEventListener("click", function() {rootClick()})
+rootButton.addEventListener("click", function() {rootClick()})
 
 function rootClick(){
     /* visorSuperior e visorInferior correpondem aos campos do visor da calculadora */
@@ -76,3 +76,4 @@ function rootClick(){
     /* Sempre que apertamos x², no visorInferior fica o resultado de x², por isso devemos
     setar isResult como "true" independente da situação */
     isResult.value="true"
+}
