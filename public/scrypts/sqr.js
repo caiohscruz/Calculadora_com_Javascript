@@ -66,7 +66,7 @@ function sqrClick(){
                         auxCalc.value=eval(auxCalc.value+"*"+visorInferior.value)
                     }
                     visorInferior.value=eval(visorInferior.value+"*"+visorInferior.value)
-                    auxCalc.value=eval(auxCalc.value+visorSuperior.value.charAt(visorSuperior.value.length-1)+visorInferior.value)
+                    auxCalc.value=eval(auxCalc.value+visorSuperior.value.charAt(visorSuperior.value.length-1).replace("x","*").replace("÷","/")+visorInferior.value)
                     visorSuperior.value+=auxSqr.value
                 }
                 
