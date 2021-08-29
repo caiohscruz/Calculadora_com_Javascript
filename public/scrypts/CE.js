@@ -9,12 +9,10 @@ function CEClick(){
     const visorInferior = document.getElementById("visor2")
     const auxSqr = document.getElementById("auxSqr")
     const div0 = document.getElementById("div0")
+    const isResult = document.getElementById("isResult")
     const auxCalc = document.getElementById("auxCalc")
     const operacoes = ["+","-","x","÷"]
     
-    if(div0.value=="true"){
-        document.getElementById('C').click();
-    }else{
         if((visorSuperior.value.charAt(visorSuperior.value.length-1)=="=")||(div0.value=="true")){
             visorSuperior.value=""
             
@@ -40,5 +38,6 @@ function CEClick(){
         }    
         /* O comportamento usual do CE é limpar a parte inferior do visor */
         visorInferior.value = "0"
-    }
+        isResult.value="false"
+    
 }

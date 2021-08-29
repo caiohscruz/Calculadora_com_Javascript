@@ -11,7 +11,7 @@ function sqrClick(){
     const visorInferior = document.getElementById("visor2")
     /* isResult sinaliza se o conteúdo do visorInferior é ou não resultado de
     alguma operação anterior */
-    const IsResult = document.getElementById("IsResult")
+    const isResult = document.getElementById("isResult")
     /* "auxCalc" será utilizado para auxiliar nas operações */
     const auxCalc = document.getElementById("auxCalc")
     /* "auxSqr" será utilizado para construir a string "sqr(x)" */
@@ -75,5 +75,5 @@ function sqrClick(){
     }
     /* Sempre que apertamos x², no visorInferior fica o resultado de x², por isso devemos
     setar isResult como "true" independente da situação */
-    IsResult.value="true"
+    isResult.value="true"
 }

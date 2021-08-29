@@ -6,16 +6,16 @@ rootButton.addEventListener("click", function() {rootClick()})
 function rootClick(){
     const visorInferior = document.getElementById("visor2")
     const visorSuperior = document.getElementById("visor1")
-    const visorInferiorIsResult = document.getElementById("visor2IsResult")
+    const visorInferiorisResult = document.getElementById("visor2isResult")
     
-    if (visorInferiorIsResult.value=="true"){
+    if (visorInferiorisResult.value=="true"){
         visorSuperior.value+="√("+visorSuperior.value+")"
         visorInferior.value = Math.sqrt(eval(visorInferior.value))
     }
-    if (visorInferiorIsResult.value=="false"){
+    if (visorInferiorisResult.value=="false"){
         visorSuperior.value+="√"+visorInferior.value
         visorInferior.value = Math.sqrt(eval(visorInferior.value))
-        visorInferiorIsResult.value="true"
+        visorInferiorisResult.value="true"
         
     }
     

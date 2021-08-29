@@ -59,7 +59,7 @@ function sOperClick(oper){
     const visorInferior = document.getElementById("visor2")
     /* isResult sinaliza se o conteúdo do visorInferior é ou não resultado de
     alguma operação anterior */
-    const IsResult = document.getElementById("IsResult")
+    const isResult = document.getElementById("isResult")
     /* "auxCalc" será utilizado para auxiliar nas operações */
     const auxCalc = document.getElementById("auxCalc")
     /* "auxSqr" guarda uma string do tipo "sqr(x)" e aqui vai indicar que anteriormente
@@ -86,7 +86,7 @@ function sOperClick(oper){
         for um resultado, para replicar o comportamento da minha calculadora de referência, simplesmente 
         deve ser trocado o símbolo da operação no visorSuperior */
         if(operacoes.includes(visorSuperior.value.charAt(visorSuperior.value.length-1))){
-            if(IsResult.value=="true"){
+            if(isResult.value=="true"){
                 visorSuperior.value=visorSuperior.value.substring(0,visorSuperior.value.length-1)
                 visorSuperior.value+=operador.value
             }else{
@@ -119,7 +119,7 @@ function sOperClick(oper){
                 visorSuperior.value+=operador.value
                 auxCalc.value=visorInferior.value
             }else{
-                if(IsResult.value=="true"){
+                if(isResult.value=="true"){
                     visorSuperior.value=auxCalc.value+operador.value
                     visorInferior.value=auxCalc.value
                 }else{
@@ -142,5 +142,5 @@ function sOperClick(oper){
     auxSqr.value=""
     /* Sempre que um botão de operador for clicado, o conteudo do visorInferior passará a corresponder 
     com algum resultado, então devemos setar isResult como "true" */
-    IsResult.value="true"
+    isResult.value="true"
 }

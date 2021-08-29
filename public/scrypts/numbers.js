@@ -57,7 +57,7 @@ function numClick(id){
     const visorInferior = document.getElementById("visor2")
     /* isResult sinaliza se o conteúdo do visorInferior é ou não resultado de
     alguma operação anterior */
-    const IsResult = document.getElementById("IsResult")
+    const isResult = document.getElementById("isResult")
     /* A constante abaixo se refere a um input que não ficará visível ao usuário
     que servirá para armazenar uma referência de qual foi o último botão de 
     operação clicado */
@@ -68,7 +68,7 @@ function numClick(id){
     houve o tratamento do botão x² */
     const auxSqr = document.getElementById("auxSqr")
 
-    if(div0.value=="true"){
+    if((div0.value=="true")||(visorSuperior.value.charAt(visorSuperior.value.length-1)=="=")){
         document.getElementById('C').click();
     }
     /* Se a última informação do visorInferior, a mais à direita, for algo do tipo sqr(X)
@@ -83,14 +83,14 @@ function numClick(id){
         }
         auxSqr.value=""
     }
-    if (visorInferior.value!="0"&&IsResult.value!="true"){
+    if (visorInferior.value!="0"&&isResult.value!="true"){
         /* CASO 1 */
         visorInferior.value+=id
     } else {
         /* CASO 2 */
         visorInferior.value=id
     }
-    /* Como o valor do visor é alterado, "IsResult deve ser setado como "false" */
-    IsResult.value="false"
+    /* Como o valor do visor é alterado, "isResult deve ser setado como "false" */
+    isResult.value="false"
 }
     
