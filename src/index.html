@@ -33,12 +33,9 @@
 <body>
     <table>
         <tr>
-            <td colspan="4" class="title"> Calculadora</td>
-        </tr>
-        <tr>
             <td colspan="4" class="visor"> 
                 <input type="text" id="visor1" placeholder=""><br>
-                <input type="text" id="visor2" placeholder="0" value="0">
+                <input type="text" id="visor2" value="0">
             </td>
         </tr>
         <tr>
@@ -126,24 +123,26 @@
             </td>
         </tr>
     </table> 
-    <label for="auxCalc">auxCalc =</label> 
-    <input type="text" id="auxCalc" class="auxString">
-    <br>
-    <label for="oper">Último operador =</label>
-    <input type="text" id="oper" class="auxString">
-    <br>
-    <label for="isResult">isResult=</label>
-    <input type="text" id="isResult" class="auxBooleano" value="false">
-    <br>
-    <label for="auxBuilderStr">auxBuilderStr=</label>
-    <input type="text" id="auxBuilderStr" class="auxString">
-    <br>
-    <label for="multEquals">multEquals=</label>
-    <input type="text" id="multEquals" class="auxString">
-    <br>
-    <label for="div0">div0=</label>
-    <input type="text" id="div0" class="auxBooleano" value="false">
-    <button id="disableButton">Disable</button>
-    <button id="enableButton">Enable</button>
+    <div class="sr-only">
+        <label for="auxCalc">auxCalc =</label> 
+        <input type="text" id="auxCalc" class="auxString">
+        <br>
+        <label for="oper">Último operador =</label>
+        <input type="text" id="oper" class="auxString">
+        <br>
+        <label for="isResult">isResult=</label>
+        <input type="text" id="isResult" class="auxBooleano" value="false">
+        <br>
+        <label for="auxBuilderStr">auxBuilderStr=</label>
+        <input type="text" id="auxBuilderStr" class="auxString">
+        <br>
+        <label for="multEquals">multEquals=</label>
+        <input type="text" id="multEquals" class="auxString">
+        <br>
+        <label for="div0">div0=</label>
+        <input type="text" id="div0" class="auxBooleano" value="false">
+        <button id="disableButton">Disable</button>
+        <button id="enableButton">Enable</button>
+    </div>
 </body>
 </html>

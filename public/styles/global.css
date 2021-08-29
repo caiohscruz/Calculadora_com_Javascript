@@ -4,11 +4,13 @@ html{
     color: #FFFFFF;
 }
 button{
-    height: max(5.3rem,5.3px);
-    width: max(7.7rem, 7.7px);
+    height: 48px;
+    width: 76px;
     background-color: #333333;
     color: #FFFFFF;
-    border: none;
+    border: 0;
+    border-spacing: 0;
+    font-size: 1.7rem;
 }
 input{
     border:none;
@@ -25,7 +27,7 @@ input, button{
 #visor2{
     font-weight: 600;
     color: #FFFFFF;
-    border-bottom:;
+    border-bottom: 0;
     font-size: 4.5rem;
 }
 button:hover{
@@ -34,13 +36,9 @@ button:hover{
 }
 table{
     background-color: #565656;
-    width: max(31.977rem,319.77px);
-    height: max(50.445rem,504.45px);
-    border-spacing: 2px;
-}
-tr, td{
-    border-spacing: 1px;
-    
+    width: 322px;
+    height: 438px;
+    padding: 1px;
 }
 .num, #simetric, #dot{
     background-color: #111111;
@@ -52,10 +50,19 @@ tr, td{
     background-color: #565656;
 }
 .visor{
-    height: max(10.7rem,107px);
-    width: max(32.1rem, 321px);
+    height: 134px;
 }
 .title{
     font-size: 1.3rem;
-    
+}
+.sr-only{
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }

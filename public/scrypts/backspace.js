@@ -11,6 +11,10 @@ function backClick(){
 
     visorInferior.value = visorInferior.value.substring(0, visorInferior.value.length -1)
 
+    if(visorInferior.value.length==0){
+        visorInferior.value="0"
+    }
+
     if(div0.value=="true"){
         document.getElementById('C').click();
     }

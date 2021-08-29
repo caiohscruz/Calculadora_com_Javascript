@@ -14,7 +14,7 @@ function CClick(){
     }
     
     visorSuperior.value=""
-    visorInferior.value=""
+    visorInferior.value="0"
     /*
     const stringInputs = document.querySelectorAll(".auxString") 
     stringInputs.forEach(stringInput => stringInput.value="")
