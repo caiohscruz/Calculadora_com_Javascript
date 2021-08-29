@@ -14,36 +14,41 @@ function equalClick(){
     terei eventualmente que lidar com os simbolos de multiplicação e divisão com "replace" */
     const operacoes = ["+","-","x","÷"]
     const div0 = document.getElementById("div0")
-    
-    if(visorSuperior.value.charAt(visorSuperior.value.length-1)!="="){
-        if(operacoes.includes(visorSuperior.value.charAt(visorSuperior.value.length-1))){
-            if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="x"){
-                auxCalc.value=eval(visorSuperior.value.replace("x","*")+visorInferior.value)
-            }else if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="÷"){
-                auxCalc.value=eval(visorSuperior.value.replace("÷","/")+visorInferior.value)
+
+    if(visorInferior.value!="Não é possível dividir por zero"){
+        if(visorSuperior.value.charAt(visorSuperior.value.length-1)!="="){
+            if(operacoes.includes(visorSuperior.value.charAt(visorSuperior.value.length-1))){
+                if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="x"){
+                    auxCalc.value=eval(visorSuperior.value.replace("x","*")+visorInferior.value)
+                }else if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="÷"){
+                    auxCalc.value=eval(visorSuperior.value.replace("÷","/")+visorInferior.value)
+                }else{
+                    auxCalc.value=eval(auxCalc.value+operador.value+visorInferior.value)
+                } 
+                visorSuperior.value+=visorInferior.value+"="
+                multEquals.value=visorInferior.value
+                visorInferior.value=auxCalc.value   
+            }else if(visorSuperior.value==""){
+                visorSuperior.value=visorInferior.value+"="
+                auxCalc.value=visorInferior.value
             }else{
-                auxCalc.value=eval(auxCalc.value+operador.value+visorInferior.value)
-            } 
-            visorSuperior.value+=visorInferior.value+"="
-            multEquals.value=visorInferior.value
-            visorInferior.value=auxCalc.value   
-        }else if(visorSuperior.value==""){
-            visorSuperior.value=visorInferior.value+"="
-            auxCalc.value=visorInferior.value
+                visorSuperior.value+="="
+                multEquals.value=visorInferior.value
+                visorInferior.value=auxCalc.value
+            }
         }else{
-            visorSuperior.value+="="
-            multEquals.value=visorInferior.value
+            visorSuperior.value=auxCalc.value+operador.value+multEquals.value+"="
+            auxCalc.value=eval(auxCalc.value+operador.value+multEquals.value)
             visorInferior.value=auxCalc.value
         }
+        if(visorInferior.value=="Infinity"){
+            div0.value="true"
+            visorInferior.value="Não é possível dividir por zero"
+            document.getElementById('disableButton').click();
+        }
     }else{
-        visorSuperior.value=auxCalc.value+operador.value+multEquals.value+"="
-        auxCalc.value=eval(auxCalc.value+operador.value+multEquals.value)
-        visorInferior.value=auxCalc.value
+        document.getElementById('C').click();
     }
-    if(visorInferior.value=="Infinity"){
-        div0.value="true"
-        visorInferior.value="Não é possível dividir por zero"
-        document.getElementById('disableOrEnableButton').click();
-    }
+    
 }
 

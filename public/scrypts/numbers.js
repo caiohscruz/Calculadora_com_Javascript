@@ -31,15 +31,15 @@ const button_seven = document.getElementById("7")
 const button_eight = document.getElementById("8")
 const button_nine = document.getElementById("9")
 
-button_zero.addEventListener("click", function() {numClick("0"))
-button_one.addEventListener("click", function() {numClick("1"))
-button_two.addEventListener("click", function() {numClick("2"))
-button_three.addEventListener("click", function() {numClick("3"))
-button_four.addEventListener("click", function() {numClick("4"))
-button_five.addEventListener("click", function() {numClick("5"))
-button_six.addEventListener("click", function() {numClick("6"))
-button_seven.addEventListener("click", function() {numClick("7"))
-button_eight.addEventListener("click", function() {numClick("8"))
+button_zero.addEventListener("click", function() {numClick("0")})
+button_one.addEventListener("click", function() {numClick("1")})
+button_two.addEventListener("click", function() {numClick("2")})
+button_three.addEventListener("click", function() {numClick("3")})
+button_four.addEventListener("click", function() {numClick("4")})
+button_five.addEventListener("click", function() {numClick("5")})
+button_six.addEventListener("click", function() {numClick("6")})
+button_seven.addEventListener("click", function() {numClick("7")})
+button_eight.addEventListener("click", function() {numClick("8")})
 button_nine.addEventListener("click", function() {numClick("9")})
 
 /* Importante perceber que, ao clicar num número, dois comportamentos são possíveis:
@@ -71,7 +71,6 @@ function numClick(id){
     if(div0.value=="true"){
         document.getElementById('C').click();
     }
-
     /* Se a última informação do visorInferior, a mais à direita, for algo do tipo sqr(X)
     devemos alterar o valor da auxCalc para não considerar esse sqr() */
     if(auxSqr.value!=""){

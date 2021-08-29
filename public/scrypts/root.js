@@ -16,6 +16,7 @@ function rootClick(){
         visorSuperior.value+="√"+visorInferior.value
         visorInferior.value = Math.sqrt(eval(visorInferior.value))
         visorInferiorIsResult.value="true"
+        
     }
     
 }

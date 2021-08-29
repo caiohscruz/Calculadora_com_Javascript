@@ -9,7 +9,7 @@ function CClick(){
     
     /* O botão C simplesmente reseta a calculadora */
     if(div0.value=="true"){
-        document.getElementById('disableOrEnableButton').click();
+        document.getElementById('enableButton').click();
     }
     
     visorSuperior.value=""

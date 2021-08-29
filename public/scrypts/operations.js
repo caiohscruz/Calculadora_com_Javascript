@@ -17,7 +17,6 @@ por uma questão de desempenho, acessar elemento por elemento diretamente, em ve
 por meio de um laço de repetição. Por isso o código acima foi comentado, e adiciono
 o que segue. Resolvi acatar a sugestão deles por não ter ainda muita experiência,
 espero ter propriedade para decidir essas coisa em não muito tempo */
-perf(numbers/operatons): Decreases algorithm complexity by not using repeating structure to add click event and map elements.
 const button_plus = document.getElementById("plus")
 const button_minus = document.getElementById("minus")
 const button_times = document.getElementById("times")
@@ -136,6 +135,7 @@ function sOperClick(oper){
     if(visorInferior.value=="Infinity"){
         div0.value="true"
         visorInferior.value="Não é possível dividir por zero"
+        document.getElementById('disableButton').click("disable");
     }
     /* Sempre que um botão de operador for clicado devemos setar auxSqr como vazio, pois essa string
     não será manipulada mais */
