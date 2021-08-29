@@ -1,6 +1,6 @@
 html{
     display: flex;
-    font-size: 62.5%
+    font-size: 62.5%;
 }
 button{
     height: 5rem;
@@ -13,4 +13,19 @@ input{
 }
 .visor {
     border: 2px solid;
+}
+input, button{
+    font-family: Segoe UI ;
+}
+#visor1{
+
+}
+#visor2{
+    font-weight: 600;
+}
+button:hover{
+    color: 
+}
+table{
+    background-color: #1F1F1F;
 }
