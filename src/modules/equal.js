@@ -4,7 +4,7 @@ import {visorSuperior, visorInferior, auxCalc,
     operacoes, div0, operador, equalButton, CButton
 } from "./elementos.js";
 
-import {Disable} from "./DisableButtons.js"
+import {Disable} from "./disableButtons.js"
 
 /* Atribuindo o evento de clique ao botão */
 equalButton.addEventListener("click", function() {equalClick()})

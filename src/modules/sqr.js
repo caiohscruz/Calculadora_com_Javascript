@@ -2,7 +2,7 @@
 
 import { sqrButton, visorInferior, visorSuperior, 
     isResult, auxBuilderStr, auxCalc, operacoes
-} from "./elementos"
+} from "./elementos.js"
 
 sqrButton.addEventListener("click", function() {sqrClick()})
 

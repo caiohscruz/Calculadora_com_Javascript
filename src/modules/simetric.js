@@ -2,7 +2,7 @@
 
 import { simetricButton, visorSuperior, visorInferior,
     auxCalc, auxBuilderStr, isResult
-} from "./elementos"
+} from "./elementos.js"
 
 simetricButton.addEventListener("click", function() {simetricClick()})
 

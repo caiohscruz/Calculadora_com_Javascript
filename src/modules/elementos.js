@@ -55,8 +55,3 @@ const CEButton = document.getElementById("CE")
 const backButton = document.getElementById("backspace") 
 
 export {backButton, CButton, CEButton};
-
-const enableButton = document.getElementById('enableButton')
-const disableButton = document.getElementById("disableButton") 
-
-export {enableButton, disableButton};

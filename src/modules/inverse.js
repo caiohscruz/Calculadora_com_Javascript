@@ -4,7 +4,7 @@ import { inverseButton, visorInferior, visorSuperior,
     isResult, auxBuilderStr, auxCalc, operacoes
 } from "./elementos.js"
 
-import {Disable} from "./DisableButtons.js"
+import {Disable} from "./disableButtons.js"
 
 inverseButton.addEventListener("click", function() {inverseClick()})
 

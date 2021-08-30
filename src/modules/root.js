@@ -1,18 +1,15 @@
 /* Aqui será tratado o botão de raiz quadrada */
 
-/* O trecho abaixo é responsável por identificar o botão de raiz e atribuis a ele um evento
-de clique chamará a função correspondente */
-const rootButton = document.getElementById("root") 
+import {rootButton, visorInferior, visorSuperior, 
+    isResult, auxBuilderStr, auxCalc, operacoes
+} from "./elementos.js"
+
+import{Disable} from "./disableButtons.js"
+
 rootButton.addEventListener("click", function() {rootClick()})
 
 function rootClick(){
-    const visorSuperior = document.getElementById("visor1")
-    const visorInferior = document.getElementById("visor2")
-    const isResult = document.getElementById("isResult")
-    const auxCalc = document.getElementById("auxCalc")
-    const auxBuilderStr = document.getElementById("auxBuilderStr")   
-    const operacoes = ["+","-","x","÷"]
-    
+       
     /* Se auxBuilderStr está vazio, é porque a última operação não foi tratar do x² ou raiz ou +/-
     ou 1/x, então auxBuilderStr tem que ser ser setado com "√(x)" onde x é o valor do visorInferior, e
     essa informação deve ser setada no visorSuperior */
@@ -70,7 +67,7 @@ function rootClick(){
         div0.value="true"
         visorInferior.value="Entrada inválida"
         visorInferior.classList.add("smalltext")
-        document.getElementById("disableButton").click();
+        Disable();
     }
     /* Sempre que apertamos x², no visorInferior fica o resultado de x², por isso devemos
     setar isResult como "true" independente da situação */

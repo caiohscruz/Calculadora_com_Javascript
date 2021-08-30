@@ -1,11 +1,11 @@
 /* Tratamento do botão % */
 
-import{perceButton, visorSuperior, visorInferior, 
+import{percentageButton, visorSuperior, visorInferior, 
     auxCalc, auxBuilderStr, isResult
 
 } from "./elementos.js";
 
-perceButton.addEventListener("click", function() {perceClick()})
+percentageButton.addEventListener("click", function() {perceClick()})
 
 function perceClick(){
     
