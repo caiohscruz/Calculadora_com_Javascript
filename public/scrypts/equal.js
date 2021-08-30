@@ -1,6 +1,7 @@
-// tratamento do botao de igual
-const equalButton = document.getElementById("equal") 
+/* Tratamento do botão de igual */ 
 
+/* Mapeando e atribuindo o evento de clique ao botão */
+const equalButton = document.getElementById("equal") 
 equalButton.addEventListener("click", function() {equalClick()})
 
 function equalClick(){
@@ -10,11 +11,9 @@ function equalClick(){
     const auxCalc = document.getElementById("auxCalc")
     const operador = document.getElementById("oper")
     const multEquals = document.getElementById("multEquals")
-    /* "operacoes" guarda os simbolos dos operadores básicos. Como farei o uso da funçao "eval"
-    terei eventualmente que lidar com os simbolos de multiplicação e divisão com "replace" */
     const operacoes = ["+","-","x","÷"]
     const div0 = document.getElementById("div0")
-
+    
     if(visorInferior.value!="Não é possível dividir por zero"){
         if(visorSuperior.value.charAt(visorSuperior.value.length-1)!="="){
             if(operacoes.includes(visorSuperior.value.charAt(visorSuperior.value.length-1))){
@@ -41,12 +40,14 @@ function equalClick(){
             auxCalc.value=eval(auxCalc.value+operador.value+multEquals.value)
             visorInferior.value=auxCalc.value
         }
-        if(visorInferior.value=="Infinity"){
+        /* Tratamento para divisão por zero - (x/0, onde x ≠ 0) */
+        if((visorInferior.value=="Infinity")||(visorInferior.value=="-Infinity")){
             div0.value="true"
             visorInferior.value="Não é possível dividir por zero"
             visorInferior.classList.add("smallertext")
             document.getElementById("disableButton").click();
         }
+        /* Tratamento para 0/0 */
         if(visorInferior.value=="NaN"){
             div0.value="true"
             visorInferior.value="Resultado indefinido"

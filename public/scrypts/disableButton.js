@@ -1,6 +1,7 @@
 /* Como não tem como usar função de outros arquivos com javascript, 
 criei um botão que não ficará disponível ao usuário cujo evento de clique
-desabilita os botões de operações matemáticas */
+desabilita os botões de operações matemáticas quando cálculos realizados 
+possuem resultados "inesperados" */
 
 /* Mapeando o botão e lhe atribuindo o evento de clique */
 const disableButton = document.getElementById("disableButton") 
