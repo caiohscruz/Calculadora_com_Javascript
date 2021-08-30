@@ -1,5 +1,4 @@
 html{
-    display: flex;
     font-size: 62.5%;
     color: #FFFFFF;
 }
@@ -39,14 +38,17 @@ input, button{
 .smalltext{
     font-size: 3rem;
 }
+/* Provoca o efeito de mudança de cor ao posicionar o mouse sobre um botão,
+mas esse efeito não pode ser desencadeado em botões desabilitados, por isso
+o ":not(.disabled)" após "button" */
 button:not(.disabled):hover, #simetric:hover, #dot:hover{
     background-color: #6B6B6B;
     border: 1px solid #BBBBBB;
 }
+/* A coloração da fonte dos botões desabilitados é diferente */
 .disabled{
     color: #565656
 }
-
 table{
     background-color: #565656;
     width: 322px;
@@ -65,9 +67,8 @@ table{
 .visor{
     height: 134px;
 }
-.title{
-    font-size: 1.3rem;
-}
+/* sr-only serve para ocultar campos que são necessários para o 
+funcionamento da calculadora, mas que não interessam ao usuário */
 .sr-only{
     position: absolute;
     height: 1px;
