@@ -1,4 +1,7 @@
-/* Como não tem como usar função de outros arquivos com javascript, criei um botão que não ficará disponível ao usuário */
+/* Como não tem como usar função de outros arquivos com javascript, criei
+ um botão que não ficará disponível ao usuário cujo evento de clique habilita
+ os botões de operações matemáticas, que podem ser desabilitados quando cálculos
+ realizados tem resultados "inesperados" */
 
 const enableButton = document.getElementById("enableButton") 
 
