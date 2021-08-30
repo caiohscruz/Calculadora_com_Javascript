@@ -11,7 +11,7 @@ equalButton.addEventListener("click", function() {equalClick()})
 
 function equalClick(){
     
-    if(visorInferior.value!="Não é possível dividir por zero"){
+    if((visorInferior.value!="Não é possível dividir por zero")&&(visorInferior.value!="Entrada inválida")&&(visorInferior.value!="Resultado indefinido")){
         if(visorSuperior.value.charAt(visorSuperior.value.length-1)!="="){
             if(operacoes.includes(visorSuperior.value.charAt(visorSuperior.value.length-1))){
                 if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="x"){
