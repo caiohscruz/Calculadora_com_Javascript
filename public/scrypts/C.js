@@ -1,14 +1,18 @@
 /* Aqui temos o tratamento do botão C */
-const CButton = document.getElementById("C") 
 
+/* Mapeando o botão "C" e lhe atribuindo um evento de clique */
+const CButton = document.getElementById("C") 
 CButton.addEventListener("click", function() {CClick()})
 
+/* O botão C simplesmente reseta a calculadora. E caso tenha havido antes
+algum evento que desabilita botões, como divisão por zero ou raiz quadrada
+de negativos, este botão deve também habilitar novamente os botões e alterar
+o tamanho da fonte do visorInferior */
 function CClick(){
     const visorSuperior = document.getElementById("visor1")
     const visorInferior = document.getElementById("visor2")
     const div0 = document.getElementById("div0")
     
-    /* O botão C simplesmente reseta a calculadora */
     if(div0.value=="true"){
         document.getElementById('enableButton').click();
         visorInferior.classList.remove("smalltext")
@@ -17,18 +21,7 @@ function CClick(){
     
     visorSuperior.value=""
     visorInferior.value="0"
-    /*
-    const stringInputs = document.querySelectorAll(".auxString") 
-    stringInputs.forEach(stringInput => stringInput.value="")
-    const boolInputs = document.querySelectorAll(".auxBooleano") 
-    boolInputs.forEach(boolInput => boolInput.value="false")
-    */
-    /* Numa discussão no linkedin, comentaram que usar um forEach para isso não seria 
-    interessante, seria um incremento de complexidade sem benefícios, que seria melhor, 
-    por uma questão de desempenho, acessar elemento por elemento diretamente, em vez de 
-    por meio de um laço de repetição. Por isso o código acima foi comentado, e adiciono
-    o que segue. Resolvi acatar a sugestão deles por não ter ainda muita experiência,
-    espero ter propriedade para decidir essas coisa em não muito tempo */
+    
     const auxCalc = document.getElementById("auxCalc")
     const auxBuilderStr = document.getElementById("auxBuilderStr")
     const operador = document.getElementById("oper")
@@ -43,5 +36,4 @@ function CClick(){
 
     isResult.value="false"
     div0.value="false"
-
 }
