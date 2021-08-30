@@ -59,7 +59,7 @@ function inverseClick(){
                         auxCalc.value=eval(`${auxCalc.value}*(${visorInferior.value})`)
                     }
                     visorInferior.value=eval(`1/(${visorInferior.value})`)
-                    auxCalc.value=eval(auxCalc.value+visorSuperior.value.charAt(visorSuperior.value.length-1).replace("x","*").replace("÷","/")+visorInferior.value)
+                    auxCalc.value=eval(`${auxCalc.value}${visorSuperior.value.charAt(visorSuperior.value.length-1).replace("x","*").replace("÷","/")}(${visorInferior.value})`)
                     visorSuperior.value+=auxBuilderStr.value
                 }
                 

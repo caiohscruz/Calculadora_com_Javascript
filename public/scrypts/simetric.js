@@ -36,7 +36,7 @@ function simetricClick(){
                 auxCalc.value=eval(`${auxCalc.value}*(${visorInferior.value})`)
             }
             visorInferior.value=eval(`${visorInferior.value}*(-1)`)
-            auxCalc.value=eval(auxCalc.value+visorSuperior.value.charAt(visorSuperior.value.length-1).replace("x","*").replace("÷","/")+visorInferior.value)
+            auxCalc.value=eval(`${auxCalc.value}${visorSuperior.value.charAt(visorSuperior.value.length-1).replace("x","*").replace("÷","/")}(${visorInferior.value})`)
             visorSuperior.value+=auxBuilderStr.value
         }
     }else{
