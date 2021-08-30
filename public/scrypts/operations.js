@@ -99,7 +99,7 @@ function sOperClick(oper){
                 visorSuperior.value=visorSuperior.value.replace("x","*")
                 auxCalc.value=eval(visorSuperior.value)
                 /* Setando os visores */
-                if(auxCalc.value!="Infinity"){
+                if((auxCalc.value!="Infinity")&&(auxCalc.value!="NaN")){
                     visorSuperior.value=auxCalc.value+operador.value
                     visorInferior.value=auxCalc.value
                 }else{
@@ -107,9 +107,13 @@ function sOperClick(oper){
                     visorSuperior.value=visorSuperior.value.replace("*","x")
                     visorSuperior.value=visorSuperior.value+operador.value
                     div0.value="true"
-                    visorInferior.value="Não é possível dividir por zero"
                     visorInferior.classList.add("smalltext")
                     document.getElementById("disableButton").click()
+                    if (auxCalc.value=="Infinity") {
+                        visorInferior.value="Não é possível dividir por zero"
+                    } else if (auxCalc.value=="NaN"){
+                        visorInferior.value="Resultado indefinido"
+                    }
                 }                    
             }
         }else{

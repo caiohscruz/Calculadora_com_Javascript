@@ -47,6 +47,12 @@ function equalClick(){
             visorInferior.classList.add("smalltext")
             document.getElementById("disableButton").click();
         }
+        if(visorInferior.value=="NaN"){
+            div0.value="true"
+            visorInferior.value="Resultado indefinido"
+            visorInferior.classList.add("smalltext")
+            document.getElementById("disableButton").click();
+        }
     }else{
         document.getElementById('C').click();
     }
