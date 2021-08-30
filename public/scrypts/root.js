@@ -73,6 +73,12 @@ function rootClick(){
             }
         }        
     }
+    if (visorInferior.value=="NaN"){
+        div0.value="true"
+        visorInferior.value="Entrada inválida"
+        visorInferior.classList.add("smalltext")
+        document.getElementById("disableButton").click();
+    }
     /* Sempre que apertamos x², no visorInferior fica o resultado de x², por isso devemos
     setar isResult como "true" independente da situação */
     isResult.value="true"

@@ -12,6 +12,7 @@ function CClick(){
     if(div0.value=="true"){
         document.getElementById('enableButton').click();
         visorInferior.classList.remove("smalltext")
+        visorInferior.classList.remove("smallertext")
     }
     
     visorSuperior.value=""

@@ -33,8 +33,11 @@ input, button{
 .normaltext{
     font-size: 4.5rem;
 }
-.smalltext{
+.smallertext{
     font-size: 2rem;
+}
+.smalltext{
+    font-size: 3rem;
 }
 button:not(.disabled):hover, #simetric:hover, #dot:hover{
     background-color: #6B6B6B;

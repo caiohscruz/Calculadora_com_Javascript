@@ -107,12 +107,14 @@ function sOperClick(oper){
                     visorSuperior.value=visorSuperior.value.replace("*","x")
                     visorSuperior.value=visorSuperior.value+operador.value
                     div0.value="true"
-                    visorInferior.classList.add("smalltext")
                     document.getElementById("disableButton").click()
                     if (auxCalc.value=="Infinity") {
                         visorInferior.value="Não é possível dividir por zero"
+                        visorInferior.classList.add("smallertext")
                     } else if (auxCalc.value=="NaN"){
                         visorInferior.value="Resultado indefinido"
+                        visorInferior.classList.add("smalltext")
+
                     }
                 }                    
             }
