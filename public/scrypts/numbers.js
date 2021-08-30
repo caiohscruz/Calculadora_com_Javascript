@@ -1,25 +1,5 @@
 /* Aqui é tratado o clique dos botões de numerais */
 
-/* O trecho abaixo é responsável por identificar todos os botões de números,
-para os quais atribui a classe "num", e adicionar a eles uma escula para clique
-que chamará a função correspondente */  
-
-/* 
-
-const numButtons = document.querySelectorAll(".num") 
-numButtons.forEach(button => {
-    button.addEventListener("click", function() {numClick(button.getAttribute("id"))})
-})
-
-*/
-
-/* Numa discussão no linkedin, comentaram que usar um forEach para isso não seria 
-interessante, seria um incremento de complexidade sem benefícios, que seria melhor, 
-por uma questão de desempenho, acessar elemento por elemento diretamente, em vez de 
-por meio de um laço de repetição. Por isso o código acima foi comentado, e adiciono
-o que segue. Resolvi acatar a sugestão deles por não ter ainda muita experiência,
-espero ter propriedade para decidir essas coisa em não muito tempo */
-
 const button_zero = document.getElementById("0")
 const button_one = document.getElementById("1")
 const button_two = document.getElementById("2")
@@ -42,37 +22,29 @@ button_seven.addEventListener("click", function() {numClick("7")})
 button_eight.addEventListener("click", function() {numClick("8")})
 button_nine.addEventListener("click", function() {numClick("9")})
 
-/* Importante perceber que, ao clicar num número, dois comportamentos são possíveis:
-
+/* Importante perceber que, ao clicar num número, três comportamentos são possíveis:
 1- Concatenar o número correspondente ao botão clicado com a informação do visorInferior
-
 2- Substituir a informação do visorInferior pelo número correspondente ao botão 
+3- O mesmo de 2, mas também alterando a informação do visorSuperior e recalculando o auxCalc
 
 O caso 1 ocorre quando o visorInferior apresenta um valor diferente de zero e ainda quando
-o valor não corresponde ao resultado de alguma operação anterior. O caso 2 trata do oposto */
+o valor não corresponde ao resultado de alguma operação anterior. O caso 2 é desencadeado
+quando o visorInferior é um resultado. O caso 3 é desencadeado quando o visorInferior é um
+resultado de alguma das operações que manipulam o auxBuilderStr (x², raiz, 1/x e +/-) */
 
 function numClick(id){
-    /* visorSuperior e visorInferior correpondem aos campos do visor da calculadora */
+
     const visorSuperior = document.getElementById("visor1")
     const visorInferior = document.getElementById("visor2")
-    /* isResult sinaliza se o conteúdo do visorInferior é ou não resultado de
-    alguma operação anterior */
     const isResult = document.getElementById("isResult")
-    /* A constante abaixo se refere a um input que não ficará visível ao usuário
-    que servirá para armazenar uma referência de qual foi o último botão de 
-    operação clicado */
     const operador = document.getElementById("oper")
-    /* "auxCalc" será utilizado para auxiliar nas operações */
     const auxCalc = document.getElementById("auxCalc")
-    /* "auxBuilderStr" guarda uma string do tipo "sqr(x)" e aqui vai indicar que anteriormente
-    houve o tratamento do botão x² */
     const auxBuilderStr = document.getElementById("auxBuilderStr")
 
     if((div0.value=="true")||(visorSuperior.value.charAt(visorSuperior.value.length-1)=="=")){
         document.getElementById('C').click()
     }
-    /* Se a última informação do visorInferior, a mais à direita, for algo do tipo sqr(X)
-    devemos alterar o valor da auxCalc para não considerar esse sqr() */
+    /* Caso 3 */
     if(auxBuilderStr.value!=""){
         if(visorSuperior.value.replace(auxBuilderStr.value,"")==""){
             visorInferior.value="0"
@@ -80,13 +52,13 @@ function numClick(id){
         }else{
             visorSuperior.value=visorSuperior.value.slice(0, - auxBuilderStr.value.length)
             if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="+"){
-                auxCalc.value=eval(auxCalc.value+"-"+visorInferior.value)
+                auxCalc.value=eval(`${auxCalc.value}-(${visorInferior.value})`)
             }else if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="-"){
-                auxCalc.value=eval(auxCalc.value+"+"+visorInferior.value)
+                auxCalc.value=eval(`${auxCalc.value}+(${visorInferior.value})`)
             }else if(visorSuperior.value.charAt(visorSuperior.value.length-1)=="x"){
-                auxCalc.value=eval(auxCalc.value+"/"+visorInferior.value)
+                auxCalc.value=eval(`${auxCalc.value}/(${visorInferior.value})`)
             }else{
-                auxCalc.value=eval(auxCalc.value+"*"+visorInferior.value)
+                auxCalc.value=eval(`${auxCalc.value}*(${visorInferior.value})`)
             }
             visorInferior.value="0"
         }
@@ -99,7 +71,6 @@ function numClick(id){
         /* CASO 2 */
         visorInferior.value=id
     }
-    /* Como o valor do visor é alterado, "isResult deve ser setado como "false" */
     isResult.value="false"
 }
     
