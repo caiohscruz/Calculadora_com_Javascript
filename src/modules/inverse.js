@@ -1,17 +1,15 @@
 /* Tratamento para o botão 1/x */
 
-/* Mapeando o botão e lhe atribuindo evento de clique */
-const inverseButton = document.getElementById("inverse") 
+import { inverseButton, visorInferior, visorSuperior, 
+    isResult, auxBuilderStr, auxCalc, operacoes
+} from "./elementos.js"
+
+import {Disable} from "./DisableButtons.js"
+
 inverseButton.addEventListener("click", function() {inverseClick()})
 
 function inverseClick(){
-    const visorSuperior = document.getElementById("visor1")
-    const visorInferior = document.getElementById("visor2")
-    const isResult = document.getElementById("isResult")
-    const auxCalc = document.getElementById("auxCalc")
-    const auxBuilderStr = document.getElementById("auxBuilderStr")   
-    const operacoes = ["+","-","x","÷"]
-    
+        
     /* Se auxBuilderStr está vazio, é porque a última operação não foi tratar do
     x², raiz quadrada ou +/-, então auxBuilderStr tem que ser ser setado com 
     "1/(x)" onde x é o valor do visorInferior, e essa informação deve ser setada 
@@ -70,7 +68,7 @@ function inverseClick(){
         div0.value="true"
         visorInferior.value="Não é possível dividir por zero"
         visorInferior.classList.add("smallertext")
-        document.getElementById("disableButton").click()
+        Disable()
     }
     isResult.value="true"
 }

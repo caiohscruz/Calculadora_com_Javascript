@@ -1,18 +1,15 @@
 /* Tratamento do botão de igual */ 
 
-/* Mapeando e atribuindo o evento de clique ao botão */
-const equalButton = document.getElementById("equal") 
+import {visorSuperior, visorInferior, auxCalc,
+    operacoes, div0, operador, equalButton, CButton
+} from "./elementos.js";
+
+import {Disable} from "./DisableButtons.js"
+
+/* Atribuindo o evento de clique ao botão */
 equalButton.addEventListener("click", function() {equalClick()})
 
 function equalClick(){
-    
-    const visorSuperior = document.getElementById("visor1")
-    const visorInferior = document.getElementById("visor2")
-    const auxCalc = document.getElementById("auxCalc")
-    const operador = document.getElementById("oper")
-    const multEquals = document.getElementById("multEquals")
-    const operacoes = ["+","-","x","÷"]
-    const div0 = document.getElementById("div0")
     
     if(visorInferior.value!="Não é possível dividir por zero"){
         if(visorSuperior.value.charAt(visorSuperior.value.length-1)!="="){
@@ -45,17 +42,17 @@ function equalClick(){
             div0.value="true"
             visorInferior.value="Não é possível dividir por zero"
             visorInferior.classList.add("smallertext")
-            document.getElementById("disableButton").click();
+            Disable();
         }
         /* Tratamento para 0/0 */
         if(visorInferior.value=="NaN"){
             div0.value="true"
             visorInferior.value="Resultado indefinido"
             visorInferior.classList.add("smalltext")
-            document.getElementById("disableButton").click();
+            Disable();
         }
     }else{
-        document.getElementById('C').click();
+        CButton.click();
     }
     
 }

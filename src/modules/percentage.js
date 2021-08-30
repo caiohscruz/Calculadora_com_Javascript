@@ -1,15 +1,14 @@
 /* Tratamento do botão % */
 
-/* Mapeando o botão e lhe atribuindo evento de clique */
-const perceButton = document.getElementById("%") 
+import{perceButton, visorSuperior, visorInferior, 
+    auxCalc, auxBuilderStr, isResult
+
+} from "./elementos.js";
+
 perceButton.addEventListener("click", function() {perceClick()})
 
 function perceClick(){
     
-    const visorSuperior = document.getElementById("visor1")
-    const visorInferior = document.getElementById("visor2")
-    const auxBuilderStr = document.getElementById("auxBuilderStr")   
-    const auxCalc = document.getElementById("auxCalc")
     const plusOrMinus = ["+","-"]
     const timesOrDiv = ["x","÷"]    
 
@@ -61,4 +60,5 @@ function perceClick(){
             visorSuperior.value+=visorInferior.value  
         }
     }
+    isResult.value="true"
 }

@@ -1,15 +1,9 @@
 /* Aqui é tratado o clique dos botões de numerais */
 
-const button_zero = document.getElementById("0")
-const button_one = document.getElementById("1")
-const button_two = document.getElementById("2")
-const button_three = document.getElementById("3")
-const button_four = document.getElementById("4")
-const button_five = document.getElementById("5")
-const button_six = document.getElementById("6")
-const button_seven = document.getElementById("7")
-const button_eight = document.getElementById("8")
-const button_nine = document.getElementById("9")
+import {button_zero, button_one, button_two, button_three, button_four,
+    button_five, button_six, button_seven, button_eight, button_nine,
+    visorSuperior, visorInferior, isResult, auxCalc, auxBuilderStr}
+    from "./elementos.js";
 
 button_zero.addEventListener("click", function() {numClick("0")})
 button_one.addEventListener("click", function() {numClick("1")})
@@ -33,13 +27,6 @@ quando o visorInferior é um resultado. O caso 3 é desencadeado quando o visorI
 resultado de alguma das operações que manipulam o auxBuilderStr (x², raiz, 1/x e +/-) */
 
 function numClick(id){
-
-    const visorSuperior = document.getElementById("visor1")
-    const visorInferior = document.getElementById("visor2")
-    const isResult = document.getElementById("isResult")
-    const operador = document.getElementById("oper")
-    const auxCalc = document.getElementById("auxCalc")
-    const auxBuilderStr = document.getElementById("auxBuilderStr")
 
     if((div0.value=="true")||(visorSuperior.value.charAt(visorSuperior.value.length-1)=="=")){
         document.getElementById('C').click()

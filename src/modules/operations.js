@@ -1,12 +1,11 @@
 /* Aqui serão tratados os botões das operações básicas (+,-,x,÷) */ 
 
-/* O trecho abaixo é responsável por identificar todos os botões dessas operações
-e adicionar a eles uma escuta para o evento de clique que chamará a função correspondente */ 
+import {button_plus, button_minus, button_times, button_div,
+    visorSuperior, visorInferior, isResult, auxCalc, auxBuilderStr,
+    operacoes, div0, operador
+} from "./elementos.js";
 
-const button_plus = document.getElementById("plus")
-const button_minus = document.getElementById("minus")
-const button_times = document.getElementById("times")
-const button_div = document.getElementById("div")
+import{Disable} from "./disableButtons.js";
 
 button_plus.addEventListener("click", function() {sOperClick("plus")})
 button_minus.addEventListener("click", function() {sOperClick("minus")})
@@ -15,7 +14,6 @@ button_div.addEventListener("click", function() {sOperClick("div")})
 
 function sOperClick(oper){
     
-    const operador = document.getElementById("oper")
     /* A função de clique passa o "id" do botão clicado como parâmetro. Essa
     informação vai ser tratada pelo trecho abaixo, que irá atribuir a "operador"
     um valor correspondente à operação em questão */ 
@@ -37,15 +35,6 @@ function sOperClick(oper){
             break;
         }
     }
-    
-    const visorSuperior = document.getElementById("visor1")
-    const visorInferior = document.getElementById("visor2")
-    const isResult = document.getElementById("isResult")
-    const auxCalc = document.getElementById("auxCalc")
-    const auxBuilderStr = document.getElementById("auxBuilderStr")
-    const div0 = document.getElementById("div0")
-    const operacoes = ["+","-","x","÷"]
-    
     
     /* Se o visorSuperior está vazio é porque nenhum cálculo foi iniciado ainda então o 
     visorSuperior deve recever o valor do visorInferior mais o simbolo do operador e 
@@ -82,14 +71,14 @@ function sOperClick(oper){
                     visorSuperior.value=visorSuperior.value.replace("*","x")
                     visorSuperior.value=visorSuperior.value+operador.value
                     div0.value="true"
-                    document.getElementById("disableButton").click()
+                    Disable()
                     if ((auxCalc.value=="Infinity")||(auxCalc.value=="-Infinity")) {
                         visorInferior.value="Não é possível dividir por zero"
                         visorInferior.classList.add("smallertext")
                     } else if (auxCalc.value=="NaN"){
                         visorInferior.value="Resultado indefinido"
                         visorInferior.classList.add("smalltext")
-
+                        
                     }
                 }                    
             }
@@ -109,10 +98,8 @@ function sOperClick(oper){
                     auxCalc.value=visorInferior.value
                 }
             }
-        }
-        
+        }        
     }
-    
     /* Sempre que um botão de operador for clicado devemos setar auxBuilderStr como vazio, pois essa string
     não será manipulada mais */
     auxBuilderStr.value=""
