@@ -69,7 +69,7 @@ function numClick(id){
     const auxBuilderStr = document.getElementById("auxBuilderStr")
 
     if((div0.value=="true")||(visorSuperior.value.charAt(visorSuperior.value.length-1)=="=")){
-        document.getElementById('C').click();
+        document.getElementById('C').click()
     }
     /* Se a última informação do visorInferior, a mais à direita, for algo do tipo sqr(X)
     devemos alterar o valor da auxCalc para não considerar esse sqr() */

@@ -18,7 +18,7 @@ function CEClick(){
             
             /* Caso a informação na parte superior do visor termine com "=", o botão C 
             se comporta como o CE, resetando a calculadora */
-            document.getElementById('C').click();
+            document.getElementById('C').click()
             
         }else if(auxBuilderStr!=""){
             visorSuperior.value=visorSuperior.value.replace(auxBuilderStr.value, "")

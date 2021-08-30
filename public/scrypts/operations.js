@@ -109,7 +109,7 @@ function sOperClick(oper){
                     div0.value="true"
                     visorInferior.value="Não é possível dividir por zero"
                     visorInferior.classList.add("smalltext")
-                    document.getElementById('disableButton').click();
+                    document.getElementById("disableButton").click()
                 }                    
             }
         }else{

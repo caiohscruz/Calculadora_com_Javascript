@@ -16,6 +16,6 @@ function backClick(){
     }
 
     if(div0.value=="true"){
-        document.getElementById('C').click();
+        document.getElementById('C').click()
     }
 }
